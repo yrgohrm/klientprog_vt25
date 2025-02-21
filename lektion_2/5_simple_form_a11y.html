@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A simple form</title>
+</head>
+
+<body>
+
+    <form action="https://yrgo-web-services.netlify.app/forms" method="POST">
+        <fieldset>
+            <legend>Inloggning</legend>
+            <label>
+                Användarnamn: 
+                <input type="text" name="user" placeholder="Användarnamn">
+            </label><br>
+            <label>
+                Lösenord: 
+                <input type="password" name="password" placeholder="Lösenord">
+            </label><br>
+
+            <label for="cooltext">Cool text:</label>
+
+            <input id="cooltext" type="text" name="cool">
+
+
+            <input type="submit" value="Logga in">
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
