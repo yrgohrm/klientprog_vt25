@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gillar du Mello?</title>
+</head>
+<body>
+
+    <h1>Melloenkäten</h1>
+    
+    <form action="https://yrgo-web-services.netlify.app/forms" method="post">
+
+        <h2>Är du ett stort fan?</h2>
+
+        <label><input type="radio" name="bigfan" value="1"> 1 - inte ett fan alls</label><br>
+        <input type="radio" name="bigfan" value="2"> 2<br>
+        <input type="radio" name="bigfan" value="3"> 3<br>
+        <input type="radio" name="bigfan" value="4"> 4<br>
+        <input type="radio" name="bigfan" value="5"> 5 - världens största fan<br>
+        <input type="radio" name="bigfan" value="0"> vet ej<br>
+
+        <hr>
+
+        <h2>Vilka är dina favoriter?</h2>
+
+        <input type="checkbox" name="mans">Måns<br>
+        <input type="checkbox" name="kaj">Kaj<br>
+        <input type="checkbox" name="maja">Maja<br>
+        <input type="checkbox" name="klanningen">Hon med klänningen<br>
+        <input type="checkbox" name="klara">Klara<br>
+        <input type="checkbox" name="trak">Tråkballaden<br>
+        <input type="checkbox" name="fin">Finballaden<br>
+
+        <hr>
+
+        <h2>Vem är du?</h2>
+
+        <h3>Vilket land är du född i?</h3>
+
+        <select name="country">
+            <option value="sv">Sverige</option>
+            <option value="no">Norge</option>
+            <option value="de">Tyskland</option>
+            <option value="sa">Sydafrika</option>
+            <option value="ca">Kanada</option>
+        </select>
+
+        <hr>
+
+        <input type="submit" value="Skicka in enkät">
+
+    </form>
+
+</body>
+</html>
