@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>display-visibility</title>
+    <style>
+        .error { 
+            display: none;
+        }
+
+        body:has(:user-invalid) .error {
+            display: block;
+        }
+    </style>
+</head>     
+
+<body>
+
+    <form>
+        <input type="email" name="xxx">
+    </form>
+
+    <div class="error">
+        Fel fel fel fel!
+    </div>
+
+</body>
+
+</html>
