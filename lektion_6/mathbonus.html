@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(229 19 54);
+            color: white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        math {
+            font-size: 200%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>Madhava–Leibniz serie för &pi;</div>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mstyle displaystyle="true">
+            <mfrac>
+                <mn>&pi;</mn>
+                <mn>4</mn>
+            </mfrac>
+            <mo>=</mo>
+            <munderover>
+                <mo>&#x2211;</mo>
+                <mrow>
+                    <mi>k</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                </mrow>
+                <mi>&#x221e;</mi>
+            </munderover>
+            <mfrac>
+                <mrow>
+                    <msup>
+                        <mrow>
+                            <mo fence>(</mo>
+                            <mo form="prefix">-</mo>
+                            <mn>1</mn>
+                            <mo fence>)</mo>
+                        </mrow>
+                        <mi>k</mi>
+                    </msup>
+                </mrow>
+                <mrow>
+                    <mn>2</mn>
+                    <mi>k</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                </mrow>
+            </mfrac>
+        </mstyle>
+    </math>
+
+    <div>Glad &pi;-dag på er!</div>
+
+</body>
+
+</html>
