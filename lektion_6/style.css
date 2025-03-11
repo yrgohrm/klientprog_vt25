@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.desktop {
+    display: none;
+}
+
+@media screen and (min-width: 500px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 200px;
+        }
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+}
