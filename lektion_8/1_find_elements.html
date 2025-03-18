@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hitta element</title>
+</head>
+
+<body>
+    <p id="someid" class="blue">Hejsan</p>
+    <p>på</p>
+    <div class="blue foo">
+        <p>er</p>
+    </div>
+
+    <script>
+        const someId = document.getElementById("someid")
+        console.log("getElementById", someId.id)
+        console.log("getElementsByClassName", document.getElementsByClassName("blue"))
+        console.log("getElementsByTagName", document.getElementsByTagName("p"))
+        
+        console.log("querySelector", document.querySelector('body > p'))
+        console.log("querySelectorAll", document.querySelectorAll('body > p'))
+    </script>
+</body>
+
+</html>

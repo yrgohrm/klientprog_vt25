@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>hello</p>
+
+    <input type="button" id="doit" value="do it">
+
+
+    <script>
+        function doit() {
+            const newElem = document.createElement("div")
+            newElem.innerText = "Hello, World!"
+            
+            const old = document.body.children[0]
+            document.body.replaceChild(newElem, old)
+
+            document.body.append(newElem)
+        }
+
+
+        const btn = document.getElementById("doit")
+        btn.addEventListener("click", doit)
+    </script>
+
+</body>
+</html>

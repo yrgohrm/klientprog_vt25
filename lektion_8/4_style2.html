@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Style från JS</title>
+</head>
+
+<body>
+
+    <h1 id="someid">
+        Detta är lite text.
+    </h1>
+
+
+    <script>
+        const color = [ "#ff0000", "#ffff00", "#00ff00", "#0000ff" ]
+        let index = 0
+
+        function next() {
+            let someElem = document.getElementById('someid')
+            if (someElem != null) {
+                someElem.style.color = color[index]
+                index = (index + 1) % color.length
+    
+                setTimeout(next, 500)
+            }
+        }
+        
+        next()
+        
+    </script>
+</body>
+
+</html>
