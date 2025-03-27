@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="big">hejsan</p>
+    <p>hoppsan</p>
+    <p>hoppsan</p>
+    <p>hoppsan</p>
+    <p class="big">hejsan</p>
+    <p>sdssdsds</p>
+    <p>sdssdsds</p>
+    <p class="big">hejsan</p>
+
+    <script>
+
+        // const allBig = document.getElementsByClassName("big")
+        // for (const elem of allBig) {
+        //     elem.style.backgroundColor = "hotpink"
+        // }
+
+        const style = document.createElement("style")
+        style.textContent = `
+            .big {
+                background-color: hotpink;
+            }
+        `
+
+        document.head.append(style)
+    </script>
+
+</body>
+</html>

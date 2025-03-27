@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main></main>
+
+    <script>
+
+        fetch("https://yrgo-web-services.netlify.app/echo?data=[1,2,3]")
+            .then(resp => resp.json())
+            .then(obj => {
+                const main = document.getElementsByTagName("main")[0];
+                main.innerText = JSON.stringify(obj);
+            })
+            .then(() => console.log("klart"))
+            .catch((error) => console.error(error));
+
+        console.log("efter fetch!");
+
+    </script>
+</body>
+</html>

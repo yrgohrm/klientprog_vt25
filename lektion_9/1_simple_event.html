@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="thebutton" value="Klicka mig">
+    <input type="button" id="button2" value="Klicka mig också">
+
+    <script>
+
+        function handleClick() {
+            let pelem = document.createElement('p')
+            pelem.innerText = "Hejsan"
+            document.body.append(pelem)
+        }
+
+        function colorStuff() {
+            const r = Math.ceil(Math.random()*255)
+            const g = Math.ceil(Math.random()*255)
+            const b = Math.ceil(Math.random()*255)
+
+            document.body.style.backgroundColor = `rgb(${r} ${g} ${b})`
+        }
+
+        const theButton = document.getElementById('thebutton')
+        theButton.addEventListener('click', handleClick)
+        theButton.addEventListener('click', colorStuff)
+
+    </script>
+</body>
+
+</html>

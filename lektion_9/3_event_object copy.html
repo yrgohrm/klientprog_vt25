@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="foo">
+
+    <script>
+
+        /**
+         * blsdldldf 
+         * 
+         * @param {MouseEvent} event
+         */
+        function avoid(event) {
+            event.target.style.position = "absolute";
+            event.target.style.top = event.clientY + 5 + Math.ceil(Math.random()*20) + "px"
+            event.target.style.left = event.clientX + 5 + Math.ceil(Math.random()*20) + "px"
+        }
+
+        let text = document.getElementById("foo")
+        text.addEventListener('mouseover', avoid)
+
+    </script>
+</body>
+
+</html>

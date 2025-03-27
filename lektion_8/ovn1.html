@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        const titles = document.getElementsByTagName("title")
+        if (titles != null && titles.length > 0) {
+            const title = titles[0]
+
+            title.innerText = "Fancy-pansy title"
+
+            // const newTitle = document.createElement("title")
+            // newTitle.innerText = "Fancy New Title"
+
+            // title.parentElement.replaceChild(newTitle, title)
+        }
+
+        // document.title = "xxxx"
+    </script>
+</body>
+</html>
