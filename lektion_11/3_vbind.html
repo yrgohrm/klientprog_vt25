@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-bind:title="title">This text has a title</span><br>
+        <input type="submit" :value="submitText">
+    </div>
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    title: 'The Element Title',
+                    submitText: 'Send it!'
+                }
+            },
+            mounted() {
+                setInterval(() => {
+                    this.title = this.title + "!";
+                    this.submitText += "?";
+                }, 2000)
+            }
+        }
+
+        Vue.createApp(app).mount("#app")
+    </script>
+</body>
+</html>

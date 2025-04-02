@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        async function foo() {
+            const resp = await fetch("https://yrgo-web-services.netlify.app/animal-facts");
+
+            if (resp.ok) {
+                const text = await resp.text();
+                alert(text);
+            }
+        }
+
+        foo();
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 9em auto;
+        }
+
+        div:has(> input) {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <form>
+            <input type="text" v-model="textbox">
+            <div>{{textbox}}</div>
+            <input type="checkbox" v-model="somecheckbox">
+            <div>{{somecheckbox}}</div>
+            <div v-if="somecheckbox">
+                <input type="radio" value="radio1" v-model="radioset">
+                <input type="radio" value="radio2" v-model="radioset">
+            </div>
+            <div v-if="somecheckbox">{{radioset}}</div>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    textbox: "",
+                    somecheckbox: true,
+                    radioset: "radio2"
+                }
+            }
+        }
+
+        Vue.createApp(app).mount("#app")
+    </script>
+</body>
+
+</html>
