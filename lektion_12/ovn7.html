@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ" defer
+        crossorigin="anonymous"></script>
+
+    <script src="ovn7.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+
+
+        <main>
+            <label>
+                Huvudtitel:
+                <input type="text" v-model="title">
+            </label>
+        </main>
+    </div>
+</body>
+
+</html>

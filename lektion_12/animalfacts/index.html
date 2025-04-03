@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ" defer
+        crossorigin="anonymous"></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" value="Mer Fakta" @click="loadNewFact">
+
+        <div class="fact-list">
+
+            <div class="fact" v-for="fact of facts">
+                <img :src="`https://robohash.org/${encodeURIComponent(fact)}.png?set=set4&size=64x64`" alt="">
+                <p>
+                    {{ fact }}
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

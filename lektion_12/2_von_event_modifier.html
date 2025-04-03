@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>count: {{ count }}</div>
+        <div>parent: {{ parent }}</div>
+
+        <div @click="parentIncrease">
+            <input type="button" value="++" @click="increase">
+        </div>
+
+        <div @click="parentIncrease">
+            <input type="button" value="stop++" @click.stop="increase">
+        </div>
+
+        <div @click="parentIncrease">
+            <input type="button" value="once++" @click.once="increase">
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    count: 1,
+                    parent: 1,
+                }
+            },
+            methods: {
+                increase(evt) {
+                    this.count++
+                },
+
+                parentIncrease(evt) {
+                    this.parent++
+                },
+            }
+        }
+    
+        Vue.createApp(app).mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Fact App</title>
+
+    <style>
+        ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        li > div {
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="More facts!" @click="addItem">
+
+        <ul>
+            <li v-for="item in items">
+                <div><img :src="item.url" alt="animal image"></div>
+                <div>{{item.text}}</div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    items: []
+                }
+            },
+            methods: {
+                async addItem() {
+                    let resp = await fetch("https://yrgo-web-services.netlify.app/animal-facts")
+
+                    if (resp.ok) {
+                        let json = await resp.json()
+
+                        let text = json.fact
+                        let urlText = encodeURIComponent(text)
+                        let url = `https://robohash.org/${urlText}.png?set=set4&size=32x32`
+
+                        let img = new Image()
+                        img.addEventListener("load", () => this.items.push({text, url}))
+                        img.src = url
+                    }
+                }
+            }
+        }
+
+        Vue.createApp(app).mount("#app")
+    </script>
+</body>
+
+</html>

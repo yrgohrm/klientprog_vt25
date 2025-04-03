@@ -1,0 +1,13 @@
+.fact-list {
+    display: flex;
+    flex-direction: column;    
+}
+
+.fact {
+    display: flex;
+    gap: 1rem;
+
+    img {
+        width: 64px;
+    }
+}
