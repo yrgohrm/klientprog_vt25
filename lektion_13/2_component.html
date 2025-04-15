@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing App</title>
+</head>
+
+<body>
+    <div id="app">
+        <list-component></list-component>
+        <list-component></list-component>
+        <list-component></list-component>
+        <list-component></list-component>
+
+
+        <div>
+            <section>
+                <list-component></list-component>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.4.21"
+        integrity="sha384-8CdW77YPqMZ3v22pThUIR22Qp1FB5oisZG2WE3OpE0l1fTHAIsdIwjQZFf/rmQ/B"
+        crossorigin="anonymous"></script>
+    <script>
+        const app = {}
+
+        const listComponent = {
+            name: "ListComponent",
+            data() {
+                return {
+                    list: []
+                }
+            },
+            methods: {
+                addItem(evt) {
+                    let text = String(Math.random())
+                    this.list.push(text)
+                }
+            },
+            template: `<div>
+                            <input type="button" value="Add random number" @click="addItem">
+                            <ul>
+                                <li v-for="item of list">{{item}}</li>
+                            </ul>
+                        </div>`
+        }
+
+        const vueApp = Vue.createApp(app)
+
+        vueApp.component('list-component', listComponent)
+
+        vueApp.mount("#app")
+    </script>
+
+</body>
+
+</html>

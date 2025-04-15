@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Tic-Tac-Toe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #app {
+            min-width: 16rem;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 0.3rem;
+            margin-top: 1.5rem;
+        }
+
+        .cell {
+            appearance: none;
+            background-color: rgb(250, 250, 250);
+            width: 5rem;
+            height: 5rem;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 5rem;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .xplay {
+            background-color: hsl(42, 100%, 75%);
+        }
+
+        .oplay {
+            background-color: hsl(208, 53%, 75%);
+        }
+
+        button[disabled] {
+            color: #000;
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin-top: 2rem;
+        }
+
+        .turn {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>🎮 Tic-Tac-Toe</h1>
+
+        <button @click="resetGame">🔄 New Game</button>
+
+        <div class="message" v-if="winner">
+            🎉 {{ winner }} wins!
+        </div>
+        <div class="message" v-else>
+            <div class="board">
+                <button v-for="(cell, index) in board" :key="index" class="cell"
+                    :disabled=" cell !== '' || winner"
+                    :class="{ xplay: cell === 'X', oplay: cell === 'O' }"
+                    @click="makeMove(index)">
+                    {{ cell }}
+                </button>
+            </div>
+
+            <div class="turn">
+                Turn: {{ currentPlayer }}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.5.13"
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    board: Array(9).fill(''),
+                    currentPlayer: 'X',
+                    winner: null
+                }
+            },
+            methods: {
+                makeMove(index) {
+                    if (this.board[index] || this.winner) {
+                        return;
+                    }
+
+                    this.board[index] = this.currentPlayer;
+
+                    if (this.isWin()) {
+                        this.winner = this.currentPlayer;
+                    }
+                    else if (this.isTie()) {
+                        this.winner = 'No one';
+                    }
+                    else {
+                        this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+                    }
+                },
+                isTie() {
+                    return !this.board.some(p => p === '');
+                },
+                isWin() {
+                    const winPatterns = [
+                        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                        [0, 4, 8], [2, 4, 6]
+                    ];
+
+                    return winPatterns.some(pattern => {
+                        const [a, b, c] = pattern;
+                        return this.board[a] &&
+                            this.board[a] === this.board[b] &&
+                            this.board[a] === this.board[c];
+                    });
+                },
+                resetGame() {
+                    this.board = Array(9).fill('');
+                    this.currentPlayer = 'X';
+                    this.winner = null;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
