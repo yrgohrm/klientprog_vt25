@@ -1,0 +1,14 @@
+::root {
+    box-sizing: border-box;
+}
+
+.usertweets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tweetbox {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
