@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard for important system</title>
+    <script>
+        // the 3.0.1 Immediately Invoked Function Expression build of pinia
+        // comes with a bug related to the devtools api which is unfortunate
+        // this is a workaround
+        var devtoolsApi = {
+            setupDevtoolsPlugin() {}
+        }
+    </script>
+    <script src="https://unpkg.com/vue@3.5.13" 
+        defer
+        integrity="sha384-G++pO/TtP6SeNEBuO/CYuppmlcEhA0Rj9IcY5feVJXhyYraEA8CKVZV38iDXLTyJ"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/pinia@3.0.1"
+        defer
+        integrity="sha384-28Ae12AL1CqhunMRNwqWyfB61dS3ZSKhgWHvNLN9IuTpWCOqX0RJMLgTlNYLkwUk"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./app.js"></script>
+    <style>
+        #app {
+            display: flex;
+        }
+
+        div {
+            margin-left: 2em;
+        }
+
+        h1 {
+            margin-left: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dashboard for important system</h1>
+    <div id="app">
+        <highest-severity></highest-severity>
+        <event-list></event-list>
+        <severity-count></severity-count>
+    </div>
+</body>
+
+</html>

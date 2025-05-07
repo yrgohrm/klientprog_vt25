@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Store Example</title>
+    <style>
+        #app > div {
+            padding: 1rem;
+            margin: 0.5rem;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+              "vue": "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js"
+            },
+            "integrity": {
+              "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js": "sha384-wOa1xLwWSrcK/pLppFebA4p3LgLYIrxpaGEdgE9J/ZN/4z+qjPAPXWY3yV5MriJt"
+            }
+        }
+    </script>
+
+    <script defer src="app.js" type="module"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>
+            <add-one></add-one>
+        </div>
+
+        <div>
+            <add-two></add-two>
+        </div>
+
+        <add-two></add-two>
+    </div>
+
+</body>
+
+</html>

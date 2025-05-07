@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweetr</title>
+
+    <script defer src="https://unpkg.com/vue@3.2.47"
+        integrity="sha384-mgp1hnBYcnmsGPH4Gggyec1hk0SHNDFRiPziZ9r5ZfLLV9nr5uLprnqdOCR5sQHQ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/vue-demi@0.12.4"
+        integrity="sha384-rZ6m4dKlaHbY7B8frX5+gO5c9h4sfHYHniSPbvUZQcyeFRwxkhz27z78newD2Z7R"
+        crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/pinia@2.0.12"
+        integrity="sha384-9+xYhKqd4Gc0rMcaTiKlnIOlZA5X6gWK6ZEe7Z3HxuqR4qoDoQYo8zU9dLawqTuZ"
+        crossorigin="anonymous"></script>
+    <script defer src="./app.js" type="module"></script>
+</head>
+<body>
+    <!-- Det är helt ok att sätta stil på vårt app-element 
+         Vi kör tre kolumner vilket kanske är lite fusk för
+         att få luft på högersidan -->
+    <div id="app" style="display: grid; grid-template-columns: 8em auto 1em;">
+        <!-- Här placerar vi vår topplista i första kolumnen i vår layout -->
+        <div>
+            Top Tweeters<br>
+            <top-list></top-list>
+        </div>
+
+        <!-- Vår inmatningskontroll och vår lista över tweets hamnar i andra
+             kolumnen -->
+        <div>
+            <twinput></twinput>
+            <tweet-list></tweet-list>
+        </div>
+    </div>
+</body>
+</html>
