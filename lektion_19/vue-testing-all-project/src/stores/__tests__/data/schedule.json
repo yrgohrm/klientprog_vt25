@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Elena Popescu",
+    "professions": [
+      "Carpenter"
+    ],
+    "bookings": [
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Preliminary",
+        "from": "2025-05-12",
+        "to": "2025-05-16"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Booked",
+        "from": "2025-05-19",
+        "to": "2025-05-29"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Preliminary",
+        "from": "2025-05-30",
+        "to": "2025-06-05"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 50,
+        "status": "Preliminary",
+        "from": "2025-06-06",
+        "to": "2025-06-13"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 50,
+        "status": "Booked",
+        "from": "2025-06-06",
+        "to": "2025-06-16"
+      }
+    ]
+  },
+  {
+    "name": "Aisha Abdi",
+    "professions": [
+      "Carpenter"
+    ],
+    "bookings": [
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Booked",
+        "from": "2025-05-12",
+        "to": "2025-05-20"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Preliminary",
+        "from": "2025-05-21",
+        "to": "2025-05-29"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Preliminary",
+        "from": "2025-05-30",
+        "to": "2025-06-06"
+      },
+      {
+        "activity": "Carpenter",
+        "percentage": 100,
+        "status": "Booked",
+        "from": "2025-06-11",
+        "to": "2025-06-13"
+      }
+    ]
+  }
+]
